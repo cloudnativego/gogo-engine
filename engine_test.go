@@ -10,7 +10,7 @@ func TestEmptyBoardAcceptsMoves(t *testing.T) {
 
 	emptyBoard := NewBoard(19)
 
-	newBoard, err := emptyBoard.PerformMove(myMove)
+	newBoard, err := emptyBoard.performMove(myMove)
 
 	if err != nil {
 		t.Errorf("Should not have received an error when placing simple positions.")
@@ -38,9 +38,9 @@ func TestBoardRemembersMultipleMoves(t *testing.T) {
 	moveC := genMove(3, 3, PlayerBlack)
 
 	emptyBoard := NewBoard(19)
-	newBoard, _ := emptyBoard.PerformMove(moveA)
-	newBoard, _ = newBoard.PerformMove(moveB)
-	newBoard, _ = newBoard.PerformMove(moveC)
+	newBoard, _ := emptyBoard.performMove(moveA)
+	newBoard, _ = newBoard.performMove(moveB)
+	newBoard, _ = newBoard.performMove(moveC)
 
 	if newBoard.Positions[1][1] != PlayerBlack {
 		t.Errorf("Expected black stone at 1,1 and it wasn't there.")
@@ -59,7 +59,7 @@ func TestCannotPlayOnOccupiedPosition(t *testing.T) {
 
 	emptyBoard.Positions[5][5] = PlayerBlack
 
-	_, err := emptyBoard.PerformMove(myMove)
+	_, err := emptyBoard.performMove(myMove)
 
 	expectedError := fmt.Sprintf(RulesFailureSpaceOccupied, myMove)
 

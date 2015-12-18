@@ -1,5 +1,7 @@
 package gogo
 
+import "time"
+
 const (
 	// EmptyPosition is an empty spot on the board.
 	EmptyPosition = 0
@@ -22,6 +24,7 @@ type GameBoard struct {
 // Match represents the state of an in-progress game of Go.
 type Match struct {
 	TurnCount int
+	StartTime time.Time
 	GameBoard GameBoard
 }
 
