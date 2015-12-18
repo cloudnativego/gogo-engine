@@ -15,17 +15,6 @@ func (gameboard GameBoard) performMove(move Move) (outBoard GameBoard, err error
 	return outBoard, err
 }
 
-// NewBoard creates a new gameboard of a given size. Gameboards must always be square.
-func NewBoard(size int) GameBoard {
-	outBoard := GameBoard{}
-	a := make([][]byte, size)
-	for i := range a {
-		a[i] = make([]byte, size)
-	}
-	outBoard.Positions = a
-	return outBoard
-}
-
 func (position Coordinate) String() string {
 	return fmt.Sprintf("(%d,%d)", position.X, position.Y)
 }

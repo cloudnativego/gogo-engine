@@ -6,7 +6,18 @@ func genMove(x int, y int, player byte) Move {
 
 // Copy copies the state of an existing board into a new board.
 func (gameboard GameBoard) copy() GameBoard {
-	outBoard := NewBoard(cap(gameboard.Positions))
+	outBoard := newBoard(cap(gameboard.Positions))
 	copy(outBoard.Positions, gameboard.Positions)
+	return outBoard
+}
+
+// NewBoard creates a new gameboard of a given size. Gameboards must always be square.
+func newBoard(size int) GameBoard {
+	outBoard := GameBoard{}
+	a := make([][]byte, size)
+	for i := range a {
+		a[i] = make([]byte, size)
+	}
+	outBoard.Positions = a
 	return outBoard
 }

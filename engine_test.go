@@ -8,7 +8,7 @@ import (
 func TestEmptyBoardAcceptsMoves(t *testing.T) {
 	myMove := genMove(1, 1, PlayerWhite)
 
-	emptyBoard := NewBoard(19)
+	emptyBoard := newBoard(19)
 
 	newBoard, err := emptyBoard.performMove(myMove)
 
@@ -37,7 +37,7 @@ func TestBoardRemembersMultipleMoves(t *testing.T) {
 	moveB := genMove(2, 2, PlayerWhite)
 	moveC := genMove(3, 3, PlayerBlack)
 
-	emptyBoard := NewBoard(19)
+	emptyBoard := newBoard(19)
 	newBoard, _ := emptyBoard.performMove(moveA)
 	newBoard, _ = newBoard.performMove(moveB)
 	newBoard, _ = newBoard.performMove(moveC)
@@ -55,7 +55,7 @@ func TestBoardRemembersMultipleMoves(t *testing.T) {
 
 func TestCannotPlayOnOccupiedPosition(t *testing.T) {
 	myMove := genMove(5, 5, PlayerWhite)
-	emptyBoard := NewBoard(19)
+	emptyBoard := newBoard(19)
 
 	emptyBoard.Positions[5][5] = PlayerBlack
 
