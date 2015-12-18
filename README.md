@@ -1,3 +1,3 @@
 # GoGo
 
-A match processing engine for the Game of Go, written in Go. :
+A match processing engine for the Game of Go, written in Go.
