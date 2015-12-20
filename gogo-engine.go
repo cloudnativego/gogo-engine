@@ -3,6 +3,8 @@ package gogo
 import (
 	"fmt"
 	"time"
+
+	"code.google.com/p/go-uuid/uuid"
 )
 
 func (position Coordinate) String() string {
@@ -16,6 +18,7 @@ func (move Move) String() string {
 // NewMatch creates a new match
 func NewMatch(size int) Match {
 	result := Match{}
+	result.ID = uuid.New()
 	result.StartTime = time.Now()
 	result.GameBoard = newBoard(size)
 	result.TurnCount = 0

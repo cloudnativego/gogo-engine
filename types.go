@@ -25,6 +25,7 @@ type GameBoard struct {
 type Match struct {
 	TurnCount int
 	GridSize  int
+	ID        string
 	StartTime time.Time
 	GameBoard GameBoard
 }
