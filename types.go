@@ -23,11 +23,13 @@ type GameBoard struct {
 
 // Match represents the state of an in-progress game of Go.
 type Match struct {
-	TurnCount int
-	GridSize  int
-	ID        string
-	StartTime time.Time
-	GameBoard GameBoard
+	TurnCount   int
+	GridSize    int
+	ID          string
+	StartTime   time.Time
+	GameBoard   GameBoard
+	PlayerBlack string
+	PlayerWhite string
 }
 
 // Coordinate represents an x-y coordinate of an intersection on a Go board
