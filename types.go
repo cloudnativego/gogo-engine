@@ -24,6 +24,7 @@ type GameBoard struct {
 // Match represents the state of an in-progress game of Go.
 type Match struct {
 	TurnCount int
+	GridSize  int
 	StartTime time.Time
 	GameBoard GameBoard
 }
