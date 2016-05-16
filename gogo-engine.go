@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"code.google.com/p/go-uuid/uuid"
+	"github.com/pborman/uuid"
 )
 
 func (position Coordinate) String() string {
